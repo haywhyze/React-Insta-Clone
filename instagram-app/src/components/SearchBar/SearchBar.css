@@ -1,0 +1,44 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 50rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-bar {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  width: 2rem;
+  height: auto;
+}
+
+.divider {
+  width: 1px;
+  height: 2rem;
+  background-color: black;
+  margin: 0 1.2rem;
+}
+
+#insta-text {
+  width: 8rem;
+}
+
+.menu-icon-bar img {
+  width: 1.5rem;
+  margin-left: 2rem;
+}
+
+.search-input {
+  text-align: center;
+  padding: .3rem;
+  width: 10rem;
+  background: #eee;
+  border: 1px solid #aaa;
+  
+}
