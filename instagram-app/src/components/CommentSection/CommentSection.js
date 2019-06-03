@@ -5,5 +5,6 @@ import Comment from './Comment';
 export default ({ comments }) => (
   <div>
     {comments.map(comment => <div key={uuidv1()}><Comment data={comment}/></div>)}
+    <input type='text' placeholder='Add a Comment...'/>
   </div>
 );
