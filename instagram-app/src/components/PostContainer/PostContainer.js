@@ -6,7 +6,7 @@ import PostHeader from './PostHeader';
 import PostImage from './PostImage';
 import './PostContainer.css';
 
-const PostContainer = ({ data, addNewComment, index }) => (
+const PostContainer = ({ data, addNewComment, index, likePost }) => (
   <div className='post-container'>
     <PostHeader 
       username={data.username} 
@@ -17,6 +17,8 @@ const PostContainer = ({ data, addNewComment, index }) => (
     />
     <PostFooter 
       likes={data.likes}
+      likePost={likePost}
+      index={index}
     />
     <CommentSection 
       comments={data.comments} 

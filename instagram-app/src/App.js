@@ -30,6 +30,24 @@ class App extends Component {
     })
   }
 
+  likePost = (index, liked) => {
+    
+    const newLikes = liked ? 
+      this.state.data[index].likes - 1 : 
+      this.state.data[index].likes + 1;
+    
+    console.log(liked, index, newLikes);
+    this.setState(state => {
+      return {
+        data: state.data.map((post, mapIndex) => {
+          if (index === mapIndex)
+            post.likes = newLikes
+          return post;
+        })
+      }
+    })
+  }
+
   componentDidMount() {
     this.setState({
       data: dummyData,
@@ -46,6 +64,7 @@ class App extends Component {
             data={data} 
             addNewComment={this.addNewComment}
             index={index}
+            likePost={this.likePost}
           />
           </div>)}
       </main>

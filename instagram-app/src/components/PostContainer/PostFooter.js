@@ -6,13 +6,13 @@ class PostFooter extends Component {
     super(props)
 
     this.state = {
-      likes: this.props.likes,
       liked: false,
     }
   }
 
-  likePost = (e) => {
+  likePost = (e, index) => {
     e.preventDefault();
+    this.props.likePost(index, this.state.liked);
     this.setState({
       liked: !this.state.liked
     })
@@ -23,7 +23,7 @@ class PostFooter extends Component {
       <div className='post-footer'>
         <img 
             className='like-post'
-            onClick={this.likePost}
+            onClick={(e) => this.likePost(e, this.props.index)}
             alt='love'
             src={!this.state.liked ? 
               `https://image.flaticon.com/icons/svg/149/149217.svg`:
@@ -35,7 +35,7 @@ class PostFooter extends Component {
             alt='chat' 
             src={`https://image.flaticon.com/icons/svg/130/130958.svg`}
           />
-          <h4>{this.state.likes} likes</h4>
+          <h4>{this.props.likes} likes</h4>
       </div>
     );
   }
