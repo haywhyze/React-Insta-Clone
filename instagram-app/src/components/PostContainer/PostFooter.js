@@ -1,6 +1,7 @@
 import React from 'react';
+import pt from 'prop-types';
 
-export default ({likes}) => (
+const PostFooter = ({likes}) => (
   <div className='post-footer'>
      <img 
         className=''
@@ -15,3 +16,13 @@ export default ({likes}) => (
       <h4>{likes} likes</h4>
   </div>
 );
+
+export default PostFooter;
+
+PostFooter.defaultProps = {
+  likes: 0,
+}
+
+PostFooter.propTypes = {
+  likes: pt.number,
+}
