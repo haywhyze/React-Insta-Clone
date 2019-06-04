@@ -10,21 +10,31 @@ class CommentSection extends Component {
     super(props);
 
     this.state = {
-      comments: this.props.comments,
-      newComment: '',
+      comment: '',
     }
   }
 
   handleComment = (e) => {
     this.setState({
-      newComment: e.target.value,
+      comment: e.target.value,
+    })
+  }
+
+  addNewComment = (e) => {
+    e.preventDefault();
+    this.props.addNewComment(this.props.index, this.state.comment);
+    this.setState({
+      comment: ''
     })
   }
 
   render() {
     return(
       <div className='comments-section'>
-        {this.state.comments.map(comment => <div key={uuidv1()}><Comment data={comment}/></div>)}
+        {this.props.comments.map(comment => 
+          <div key={uuidv1()}>
+            <Comment data={comment}/>
+          </div>)}
         <p className='timestamp'>
           {moment(this.props.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}
         </p>
@@ -33,11 +43,12 @@ class CommentSection extends Component {
             className='comment-input' 
             type='text' 
             placeholder='Add a Comment...'
-            value={this.state.newComment}
+            value={this.state.comment}
             onChange={this.handleComment}
           />
-          <button 
-            disabled={!this.state.newComment.trim() ? true : false}
+          <button
+            onClick={this.addNewComment}
+            disabled={!this.state.comment.trim() ? true : false}
           >Post</button>
         </form>
       </div>

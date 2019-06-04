@@ -13,6 +13,23 @@ class App extends Component {
     }
   }
 
+  addNewComment = (index, comment) => {
+    if(!comment) return
+    const newComment = {
+      username: 'haywhyze',
+      text: comment,
+    }
+    this.setState(state => {
+      return {
+        data: state.data.map((post, mapIndex) => {
+          if (index === mapIndex)
+            post.comments = post.comments.concat(newComment);
+          return post;
+        })
+      }
+    })
+  }
+
   componentDidMount() {
     this.setState({
       data: dummyData,
@@ -24,8 +41,12 @@ class App extends Component {
     <div>
       <SearchBar />
       <main className='feed'>
-        {this.state.data.map(data => <div key={data.imageUrl}>
-          <PostContainer data={data} />
+        {this.state.data.map((data, index) => <div key={data.imageUrl}>
+          <PostContainer 
+            data={data} 
+            addNewComment={this.addNewComment}
+            index={index}
+          />
           </div>)}
       </main>
     </div>
