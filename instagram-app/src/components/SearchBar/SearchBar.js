@@ -25,17 +25,17 @@ export default () => (
     <div className='menu-icon-bar'>
       <img 
         className=''
-        alt='Instagram' 
+        alt='compass' 
         src='https://image.flaticon.com/icons/svg/54/54642.svg'
       />
       <img 
         className=''
-        alt='Instagram' 
+        alt='love' 
         src='https://image.flaticon.com/icons/svg/63/63263.svg'
       />
       <img 
         className=''
-        alt='Instagram' 
+        alt='user' 
         src='http://cdn.onlinewebfonts.com/svg/img_210318.png'
       />
     </div>
