@@ -2,6 +2,7 @@ import React from 'react';
 import './SearchBar.css';
 
 export default () => (
+  <nav className='navbar'>
   <div className='search-bar'>
     <div className='logo-bar'>
       <img 
@@ -24,7 +25,7 @@ export default () => (
     </div>
     <div className='menu-icon-bar'>
       <img 
-        className=''
+        className='invert'
         alt='compass' 
         src='https://image.flaticon.com/icons/svg/54/54642.svg'
       />
@@ -40,4 +41,5 @@ export default () => (
       />
     </div>
   </div>
+  </nav>
 );

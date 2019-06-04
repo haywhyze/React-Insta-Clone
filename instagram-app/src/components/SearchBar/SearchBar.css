@@ -1,11 +1,19 @@
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
-  max-width: 50rem;
+  max-width: 60rem;
   margin: 0 auto;
   justify-content: space-between;
   padding: 1rem;
-  border-bottom: 1px solid #ddd;
 }
 
 .logo-bar {
@@ -14,31 +22,32 @@
 }
 
 #logo {
-  width: 2rem;
+  width: 1.4rem;
   height: auto;
 }
 
 .divider {
   width: 1px;
-  height: 2rem;
+  height: 1.7rem;
   background-color: black;
   margin: 0 1.2rem;
+  transform: scaleX(.4);
 }
 
 #insta-text {
-  width: 8rem;
+  width: 6.5rem;
 }
 
 .menu-icon-bar img {
-  width: 1.5rem;
+  width: 1.3rem;
   margin-left: 2rem;
 }
 
 .search-input {
   text-align: center;
   padding: .3rem;
-  width: 10rem;
-  background: #eee;
-  border: 1px solid #aaa;
-  
+  width: 15rem;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  font-size: 1rem;
 }

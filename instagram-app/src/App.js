@@ -8,9 +8,11 @@ function App() {
   return (
     <div>
       <SearchBar />
-      {dummyData.map(data => <div key={data.imageUrl}>
-        <PostContainer data={data} />
-        </div>)}
+      <main className='feed'>
+        {dummyData.map(data => <div key={data.imageUrl}>
+          <PostContainer data={data} />
+          </div>)}
+      </main>
     </div>
   );
 }
