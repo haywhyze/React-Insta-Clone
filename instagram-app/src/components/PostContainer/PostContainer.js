@@ -10,6 +10,6 @@ export default ({ data }) => (
     <PostHeader username={data.username} thumbnail={data.thumbnailUrl}/>
     <PostImage image={data.imageUrl}/>
     <PostFooter likes={data.likes}/>
-    <CommentSection comments={data.comments} />
+    <CommentSection comments={data.comments} timestamp={data.timestamp} />
   </div>
 );
