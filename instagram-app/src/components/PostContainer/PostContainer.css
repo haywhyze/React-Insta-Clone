@@ -26,3 +26,16 @@
   margin-top: -1rem;
   width: 100%;
 }
+
+.post-footer {
+  margin: 1rem;
+}
+
+.post-footer h4 {
+  margin: .5rem 0;
+}
+
+.post-footer img {
+  width: 1.5rem;
+  margin-right: 1rem;
+}
