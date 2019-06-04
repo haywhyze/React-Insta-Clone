@@ -22,7 +22,7 @@ class PostFooter extends Component {
     return (
       <div className='post-footer'>
         <img 
-            className='like-post'
+            className={!this.state.liked ? 'like-post' : 'like-post-grow'}
             onClick={(e) => this.likePost(e, this.props.index)}
             alt='love'
             src={!this.state.liked ? 
