@@ -1,5 +1,6 @@
 .comments-section {
   margin: -1rem 0 1rem 1rem;
+  width: calc(100% - 2rem);
 }
 
 .comments {
@@ -9,6 +10,20 @@
 .comments h4, .comments p {
   margin: 0;
   display: inline-block;
+}
+
+.comment-input {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,.1);
+  width: 100%;
+  padding: 1.3rem 0;
+  margin-bottom: -1rem;
+}
+
+.comment-input::placeholder {
+  color: #aaa;
+  font-weight: bold;
+  font-size: .85rem;
 }
 
 .timestamp {

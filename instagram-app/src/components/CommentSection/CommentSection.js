@@ -10,6 +10,6 @@ export default ({ comments, timestamp }) => (
     <p className='timestamp'>
       {moment(timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}
     </p>
-    <input type='text' placeholder='Add a Comment...'/>
+    <input className='comment-input' type='text' placeholder='Add a Comment...'/>
   </div>
 );
