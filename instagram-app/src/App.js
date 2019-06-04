@@ -9,8 +9,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: dummyData,
+      data: [],
     }
+  }
+
+  componentDidMount() {
+    this.setState({
+      data: dummyData,
+    })
   }
 
   render () {
