@@ -62,10 +62,25 @@ class App extends Component {
     })
   }
 
+  loadStateFromLocalStorage = () => {
+    this.setState(JSON.parse(localStorage.getItem('instaCloneState')));
+  }
+
+  storeStateInLocalStorage = () => {
+    localStorage.clear();
+    localStorage.setItem('instaCloneState', JSON.stringify(this.state))
+  }
+  
+  componentDidUpdate() {
+    this.storeStateInLocalStorage();
+  }
+
   componentDidMount() {
     this.setState({
       data: dummyData,
     })
+    if (localStorage.instaCloneState)
+      this.loadStateFromLocalStorage();
   }
 
   render () {
