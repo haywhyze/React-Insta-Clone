@@ -16,6 +16,14 @@ class SearchBar extends Component {
     })
   }
 
+  filterUsers = (e) => {
+    e.preventDefault()
+    this.setState({
+      query: '',
+    })
+    this.props.filterUsers(this.state.query);
+  }
+
   render() {
     return (
       <nav className='navbar'>
@@ -34,6 +42,7 @@ class SearchBar extends Component {
             />
           </div>
           <div>
+            <form onSubmit={this.filterUsers}>
             <input 
               className='search-input'
               value={this.state.query}
@@ -41,6 +50,7 @@ class SearchBar extends Component {
               type='text'
               placeholder='&#x1F50D;Search' 
             />
+            </form>
           </div>
           <div className='menu-icon-bar'>
             <img 

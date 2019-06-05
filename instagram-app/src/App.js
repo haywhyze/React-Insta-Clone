@@ -36,7 +36,6 @@ class App extends Component {
       this.state.data[index].likes - 1 : 
       this.state.data[index].likes + 1;
     
-    console.log(liked, index, newLikes);
     this.setState(state => {
       return {
         data: state.data.map((post, mapIndex) => {
@@ -44,6 +43,21 @@ class App extends Component {
             post.likes = newLikes
           return post;
         })
+      }
+    })
+  }
+
+  filterUsers = (query) => {
+    this.setState(state => {
+      return {
+        data: dummyData,
+      }
+    })
+    this.setState(state => {
+      return {
+        data: state.data.filter(post => 
+          post.username.includes(query)
+        )
       }
     })
   }
@@ -57,7 +71,7 @@ class App extends Component {
   render () {
     return (
     <div>
-      <SearchBar />
+      <SearchBar filterUsers={this.filterUsers} />
       <main className='feed'>
         {this.state.data.map((data, index) => <div key={data.imageUrl}>
           <PostContainer 
