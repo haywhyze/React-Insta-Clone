@@ -6,12 +6,26 @@ import PostHeader from './PostHeader';
 import PostImage from './PostImage';
 import './PostContainer.css';
 
-const PostContainer = ({ data }) => (
+const PostContainer = ({ data, addNewComment, index, likePost }) => (
   <div className='post-container'>
-    <PostHeader username={data.username} thumbnail={data.thumbnailUrl}/>
-    <PostImage image={data.imageUrl}/>
-    <PostFooter likes={data.likes}/>
-    <CommentSection comments={data.comments} timestamp={data.timestamp} />
+    <PostHeader 
+      username={data.username} 
+      thumbnail={data.thumbnailUrl}
+    />
+    <PostImage 
+      image={data.imageUrl}
+    />
+    <PostFooter 
+      likes={data.likes}
+      likePost={likePost}
+      index={index}
+    />
+    <CommentSection 
+      comments={data.comments} 
+      timestamp={data.timestamp} 
+      addNewComment={addNewComment}
+      index={index}
+    />
   </div>
 );
 
