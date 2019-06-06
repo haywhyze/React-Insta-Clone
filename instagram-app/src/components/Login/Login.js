@@ -8,6 +8,7 @@ class PostsPage extends Component {
     this.state = {
       username: '',
       password: '',
+      isLoggingIn: false,
     }
   }
 
@@ -20,7 +21,16 @@ class PostsPage extends Component {
 
   login = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.setState({
+      isLoggingIn: true,
+    })
+    localStorage.setItem('username', this.state.username);
+    setTimeout(() => {
+      this.setState({
+        isLoggingIn: false,
+      })
+      window.location.reload();
+    }, 1000);
     this.setState({
       username: '',
       password: ''
@@ -56,7 +66,7 @@ class PostsPage extends Component {
           <button
             onClick={this.login}
             disabled={!this.state.username.trim() ? true : false}
-          >Log In</button>
+          >{!this.state.isLoggingIn ? 'Log In': 'Logging In'}</button>
         </form>
       </div>
     </div>
