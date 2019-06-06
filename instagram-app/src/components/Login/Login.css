@@ -18,7 +18,7 @@
   width: 12rem;
 }
 
-form {
+.login-form {
   box-sizing: border-box;
   margin: 2rem 0;
 }
@@ -33,7 +33,7 @@ form {
   margin-bottom: 0.35rem;
 }
 
-button {
+.login-button {
   width: 100%;
   padding: 0.5rem;
   border: none;
@@ -47,10 +47,10 @@ button {
 }
 
 
-button:disabled {
+.login-button:disabled {
   background-color: rgba(56, 151, 240, .3);
 }
 
-button:focus {
+.login-input, .login-button:focus {
   outline: none;
 }

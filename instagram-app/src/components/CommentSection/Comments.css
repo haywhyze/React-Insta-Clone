@@ -41,11 +41,11 @@
   color: #aaa;
 }
 
-form {
+.comment-form {
   position: relative;
 }
 
-button {
+.comment-button {
   border: none;
   font-weight: bold;
   font-size: 1rem;
@@ -57,10 +57,10 @@ button {
   cursor: pointer;
 }
 
-button:disabled {
+.comment-button:disabled {
   color: rgba(56, 151, 240, .3);
 }
 
-button:focus {
+.comment-button:focus {
   outline: none;
 }

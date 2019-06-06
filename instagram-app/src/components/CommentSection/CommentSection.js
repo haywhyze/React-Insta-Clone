@@ -38,7 +38,7 @@ class CommentSection extends Component {
         <p className='timestamp'>
           {moment(this.props.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}
         </p>
-        <form>
+        <form className='comment-form'>
           <input 
             className='comment-input' 
             type='text' 
@@ -47,6 +47,7 @@ class CommentSection extends Component {
             onChange={this.handleComment}
           />
           <button
+            className='comment-button'
             onClick={this.addNewComment}
             disabled={!this.state.comment.trim() ? true : false}
           >Post</button>

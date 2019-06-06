@@ -46,7 +46,10 @@ class PostsPage extends Component {
           alt='Instagram' 
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/200px-Instagram_logo.svg.png'
         />
-        <form onSubmit={this.login}>
+        <form 
+          className='login-form' 
+          onSubmit={this.login}
+        >
           <input 
             className='login-input' 
             type='text' 
@@ -64,6 +67,7 @@ class PostsPage extends Component {
             onChange={this.handleLoginInput}
           />
           <button
+            className='login-button'
             onClick={this.login}
             disabled={!this.state.username.trim() ? true : false}
           >{!this.state.isLoggingIn ? 'Log In': 'Logging In'}</button>
