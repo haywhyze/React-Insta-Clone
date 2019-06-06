@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import PostsPage from './components/PostContainer/PostsPage';
-import withAuthenticate from './components/authentication/withAuthenticate';
+import withAuthenticate from './authentication/withAuthenticate';
 
 const ComponentFromWithAuthenticate = withAuthenticate(PostsPage);
 
