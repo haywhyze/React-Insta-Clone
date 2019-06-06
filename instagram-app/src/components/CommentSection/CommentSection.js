@@ -2,8 +2,66 @@ import React, { Component } from 'react';
 import pt from 'prop-types';
 import uuidv1 from 'uuid/v1';
 import moment from 'moment';
+import styled from 'styled-components';
 import Comment from './Comment';
-import './Comments.css';
+
+const Commentsection = styled.div`
+  margin: -1rem 0 1rem 1rem;
+  width: calc(100% - 2rem);
+
+  .comment-input {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,.1);
+    width: calc(100% + 1rem);
+    padding: 1.5rem 0;
+    margin: 0 -1rem -1rem -1rem;
+    padding: 0;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    padding-right: 0;
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .comment-input:focus {
+    outline: none;
+  }
+
+  .comment-input::placeholder {
+    color: #aaa;
+    font-size: .85rem;
+  }
+
+  .timestamp {
+    text-transform: uppercase;
+    font-size: 70%;
+    color: #aaa;
+  }
+
+  .comment-form {
+    position: relative;
+  }
+
+  .comment-button {
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    position: absolute;
+    background: transparent;
+    right: 0;
+    top: 1.3rem;
+    color: rgb(56, 151, 240);
+    cursor: pointer;
+  }
+
+  .comment-button:disabled {
+    color: rgba(56, 151, 240, .3);
+  }
+
+  .comment-button:focus {
+    outline: none;
+  }
+`
 
 class CommentSection extends Component {
   constructor(props) {
@@ -30,7 +88,7 @@ class CommentSection extends Component {
 
   render() {
     return(
-      <div className='comments-section'>
+      <Commentsection>
         {this.props.comments.map(comment => 
           <div key={uuidv1()}>
             <Comment data={comment}/>
@@ -52,7 +110,7 @@ class CommentSection extends Component {
             disabled={!this.state.comment.trim() ? true : false}
           >Post</button>
         </form>
-      </div>
+      </Commentsection>
     );
   }
 }
