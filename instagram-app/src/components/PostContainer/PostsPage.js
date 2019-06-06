@@ -16,7 +16,7 @@ class PostsPage extends Component {
   addNewComment = (index, comment) => {
     if(!comment) return
     const newComment = {
-      username: 'haywhyze',
+      username: localStorage.username,
       text: comment,
     }
     this.setState(state => {
