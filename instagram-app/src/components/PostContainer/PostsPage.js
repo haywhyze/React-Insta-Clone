@@ -67,7 +67,6 @@ class PostsPage extends Component {
   }
 
   storeStateInLocalStorage = () => {
-    localStorage.clear();
     localStorage.setItem('instaCloneState', JSON.stringify(this.state))
   }
   
