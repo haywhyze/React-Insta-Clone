@@ -1,5 +1,63 @@
 import React, { Component } from 'react';
-import './SearchBar.css';
+import styled from 'styled-components';
+// import './SearchBar.css';
+
+const NavBar = styled.nav`
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 4;
+`
+
+const Searchbar = styled.div`
+  display: flex;
+  align-items: center;
+  max-width: 60rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 1rem;
+`
+
+const LogoBar = styled.div`
+  display: flex;
+  align-items: center;
+
+  #logo {
+    width: 1.4rem;
+    height: auto;
+  }
+
+  .divider {
+    width: 1px;
+    height: 1.7rem;
+    background-color: black;
+    margin: 0 1.2rem;
+    transform: scaleX(.4);
+  }
+
+  #insta-text {
+    width: 6.5rem;
+  }
+`
+
+const MenuIconBar = styled.div`
+  img {
+    width: 1.3rem;
+    margin-left: 2rem;
+  }
+`
+
+const SearchInput = styled.input`
+  text-align: center;
+  padding: .3rem;
+  width: 15rem;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+`
 
 class SearchBar extends Component {
   constructor() {
@@ -26,9 +84,9 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <nav className='navbar'>
-        <div className='search-bar'>
-          <div className='logo-bar'>
+      <NavBar>
+        <Searchbar>
+          <LogoBar>
             <img 
               id='logo' 
               alt='Instagram logo' 
@@ -40,11 +98,10 @@ class SearchBar extends Component {
               alt='Instagram' 
               src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/200px-Instagram_logo.svg.png'
             />
-          </div>
+          </LogoBar>
           <div>
             <form onSubmit={this.filterUsers}>
-            <input 
-              className='search-input'
+            <SearchInput
               value={this.state.query}
               onChange={this.handleSearchInput}
               type='text'
@@ -52,7 +109,7 @@ class SearchBar extends Component {
             />
             </form>
           </div>
-          <div className='menu-icon-bar'>
+          <MenuIconBar>
             <img 
               className='invert'
               alt='compass' 
@@ -68,9 +125,9 @@ class SearchBar extends Component {
               alt='user' 
               src='http://cdn.onlinewebfonts.com/svg/img_210318.png'
             />
-          </div>
-        </div>
-      </nav>
+          </MenuIconBar>
+        </Searchbar>
+      </NavBar>
     )
   }
 } 
