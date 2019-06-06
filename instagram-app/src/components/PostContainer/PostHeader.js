@@ -1,15 +1,29 @@
 import React from 'react';
 import pt from 'prop-types';
-import './PostContainer.css';
+import styled from 'styled-components';
+
+const Postheader = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: -1rem;
+  padding: 1rem;
+
+  img {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+  }
+`
 
 const PostHeader = ({username, thumbnail}) => (
-  <div className='post-header'>
+  <Postheader>
     <img
       alt='thumbnail'
       src={thumbnail}
     />
     <h4>{username}</h4>
-  </div>
+  </Postheader>
 );
 
 export default PostHeader;

@@ -1,18 +1,3 @@
-
-.post-header {
-  display: flex;
-  align-items: center;
-  margin-top: -1rem;
-  padding: 1rem;
-}
-
-.post-header img {
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  margin-right: .5rem;
-}
-
 .post-image img {
   margin-top: -1rem;
   width: 100%;
