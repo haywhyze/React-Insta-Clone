@@ -1,14 +1,21 @@
 import React from 'react';
 import pt from 'prop-types';
-import './PostContainer.css';
+import styled from 'styled-components';
+
+const Postimage = styled.div`
+  img {
+    margin-top: -1rem;
+    width: 100%;
+  }
+`
 
 const PostImage = ({image}) => (
-  <div className='post-image'>
+  <Postimage>
     <img 
       alt='postimage'
       src={image}  
     />
-  </div>
+  </Postimage>
 );
 
 export default PostImage;

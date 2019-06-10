@@ -1,12 +1,21 @@
 import React from 'react';
 import pt from 'prop-types';
-import './Comments.css';
+import styled from 'styled-components';
+
+const CommentStyled = styled.div`
+  margin: .5rem 0;
+
+  h4, p {
+    margin: 0;
+    display: inline-block;
+  }
+`
 
 const Comment = ({ data }) => (
-  <div className='comments'>
+  <CommentStyled>
     <h4>{data.username}</h4>
     <p>&nbsp;{data.text}</p>
-  </div>
+  </CommentStyled>
 );
 export default Comment;
 
